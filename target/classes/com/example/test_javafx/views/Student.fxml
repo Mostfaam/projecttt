@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane1" maxHeight="500.0" maxWidth="837.0" minHeight="305.0" minWidth="485.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test_javafx.controllers.StudentController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LIGHTSKYBLUE" height="89.0" stroke="BLACK" strokeType="INSIDE" width="799.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="413.0" layoutY="89.0" stroke="BLACK" strokeType="INSIDE" width="238.0" />
+      <Label layoutX="31.0" layoutY="24.0" text=" Student">
+         <font>
+            <Font name="Times New Roman" size="36.0" />
+         </font>
+      </Label>
+      <GridPane hgap="16.0" layoutX="2.0" layoutY="125.0" prefHeight="250.0" prefWidth="238.0" vgap="16.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="207.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="60.8" minHeight="10.0" prefHeight="35.99999084472656" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.8" minHeight="10.0" prefHeight="35.99999084472656" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.8" minHeight="10.0" prefHeight="35.99999084472656" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.8" minHeight="10.0" prefHeight="35.99999084472656" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.8" minHeight="10.0" prefHeight="35.99999084472656" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.8" minHeight="10.0" prefHeight="35.99999084472656" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <padding>
+            <Insets left="32.0" right="32.0" />
+         </padding>
+         <children>
+            <TextField fx:id="name" prefHeight="33.0" prefWidth="203.0" promptText="Enter Student Name" />
+            <TextField fx:id="id" prefHeight="32.0" prefWidth="203.0" promptText="Enter Student ID" GridPane.rowIndex="1" />
+            <TextField fx:id="gpa" prefHeight="32.0" prefWidth="203.0" promptText="Enter Student GPA" GridPane.rowIndex="2" />
+            <TextField fx:id="phone" prefHeight="31.0" prefWidth="203.0" promptText="Enter Student Phone" GridPane.rowIndex="3" />
+            <TextField fx:id="address" prefHeight="33.0" prefWidth="190.0" promptText="Enter Student Adress" GridPane.rowIndex="4" />
+            <ComboBox fx:id="comboBoxForCourse" prefHeight="26.0" prefWidth="175.0" promptText="Select course" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <Button layoutX="700.0" layoutY="36.0" mnemonicParsing="false" onAction="#onBack" text="Back">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="121.0" layoutY="426.0" mnemonicParsing="false" onAction="#onAdd" prefHeight="60.0" prefWidth="102.0" style="-fx-background-color: #A7FA7A;" text="Add">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="426.0" mnemonicParsing="false" onAction="#onDeleat" prefHeight="60.0" prefWidth="102.0" style="-fx-background-color: #A7FA7A;" text="Deleat">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="table" editable="true" layoutX="238.0" layoutY="90.0" prefHeight="413.0" prefWidth="560.0">
+         <columns>
+            <TableColumn fx:id="nameTa" minWidth="30.0" prefWidth="169.0" text="name" />
+            <TableColumn fx:id="universityId" minWidth="30.0" prefWidth="151.0" text="ID" />
+            <TableColumn fx:id="gpaTa" minWidth="30.0" prefWidth="81.0" text="GPA" />
+            <TableColumn fx:id="phoneNumber" minWidth="30.0" prefWidth="158.0" text="Phone" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

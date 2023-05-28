@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test_javafx.controllers.attendsController">
+   <children>
+      <AnchorPane fx:id="anchorPaneForAttend" maxHeight="519.0" maxWidth="837.0" minHeight="305.0" minWidth="485.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="519.0" prefWidth="806.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LIGHTSKYBLUE" height="89.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="806.0" />
+            <Label layoutX="60.0" layoutY="19.0" prefHeight="49.0" prefWidth="188.0" text="Attendanc">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.5213270142180095" endY="0.7156398104265402" startX="0.5118483412322274" startY="0.16113744075829384">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.21476510067114093">
+                           <color>
+                              <Color red="0.8199999928474426" green="0.09019999951124191" blue="0.09019999951124191" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.6036585365853658">
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.8657718120805369">
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8289473652839661" green="0.08826754242181778" blue="0.08826754242181778" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <TableView fx:id="table" layoutX="392.0" layoutY="89.0" onMouseReleased="#getStudentName" prefHeight="392.0" prefWidth="417.0">
+               <columns>
+                  <TableColumn fx:id="name" minWidth="30.0" prefWidth="139.0" text="name" />
+                  <TableColumn fx:id="universityId" minWidth="30.0" prefWidth="120.00001525878906" text="ID" />
+                  <TableColumn fx:id="phoneNumber" minWidth="30.0" prefWidth="148.0" text="Phone" />
+               </columns>
+            </TableView>
+            <Button fx:id="atend" layoutX="659.0" layoutY="480.0" mnemonicParsing="false" onAction="#oAatend" prefHeight="38.0" prefWidth="142.0" text="attend">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="back" layoutX="714.0" layoutY="32.0" mnemonicParsing="false" onAction="#back" text="back" />
+            <Button fx:id="creatLecture" layoutY="464.0" mnemonicParsing="false" onAction="#onLecturt" prefHeight="35.0" prefWidth="150.0" text="Creat Lecture">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="selectTheCourse" layoutY="89.0" prefWidth="150.0" promptText="Select the course" visibleRowCount="30" />
+            <ListView fx:id="listForLecture" layoutY="153.0" onMousePressed="#setLecture" prefHeight="297.0" prefWidth="150.0" />
+            <Label layoutX="7.0" layoutY="128.0" prefHeight="25.0" prefWidth="125.0" text="Select the Lecture " />
+            <Button fx:id="rebort" layoutX="392.0" layoutY="480.0" mnemonicParsing="false" onAction="#onRebort" prefHeight="38.0" prefWidth="136.0" text="rebort for student">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="id" layoutX="188.0" layoutY="141.0" onKeyTyped="#autoComplete" prefHeight="25.0" prefWidth="159.0" />
+            <Label layoutX="177.0" layoutY="116.0" prefHeight="25.0" prefWidth="170.0" text="write the name or id or phone" />
+            <ListView fx:id="lsitAutoComplete" layoutX="188.0" layoutY="166.0" onMouseClicked="#getStudent" prefHeight="154.0" prefWidth="159.0" visible="false" />
+            <TableView fx:id="table1" layoutX="391.0" layoutY="89.0" onMouseReleased="#getStudentName" prefHeight="392.0" prefWidth="417.0" visible="false">
+               <columns>
+                  <TableColumn fx:id="topic" minWidth="30.0" prefWidth="139.0" text="topic" />
+                  <TableColumn fx:id="date" minWidth="30.0" prefWidth="162.0" text="date" />
+                  <TableColumn fx:id="attend" minWidth="30.0" prefWidth="110.0" text="attend" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneForLecture" layoutX="210.0" layoutY="104.0" prefHeight="261.0" prefWidth="391.0" visible="false">
+         <children>
+            <Button fx:id="creatTopic" layoutX="133.0" layoutY="212.0" mnemonicParsing="false" onAction="#creatTopic" prefHeight="35.0" prefWidth="125.0" text="Creat" />
+            <Label layoutX="140.0" layoutY="14.0" prefHeight="32.0" prefWidth="136.0" text=" Creat lecture">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="topicfield" layoutX="186.0" layoutY="98.0" prefHeight="25.0" prefWidth="159.0" />
+            <Label layoutX="37.0" layoutY="98.0" prefHeight="25.0" prefWidth="81.0" text="topic">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="classRoom" layoutX="186.0" layoutY="144.0" prefHeight="25.0" prefWidth="159.0" />
+            <Label layoutX="37.0" layoutY="143.0" prefHeight="26.0" prefWidth="90.0" text="classRoom">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <VBox fx:id="vboxStart" layoutX="94.0" layoutY="104.0" prefHeight="334.0" prefWidth="648.0" style="-fx-alignment: center;">
+         <children>
+            <Label fx:id="lableVis" prefHeight="38.0" prefWidth="650.0" style="-fx-alignment: center;" text="If you want to register your attend click on 'Attend'  ,or import an Excel file" textAlignment="CENTER" />
+            <Label fx:id="labelVis2" prefHeight="38.0" prefWidth="222.0" />
+            <HBox prefHeight="100.0" prefWidth="234.0" style="-fx-alignment: center;">
+               <children>
+                  <Button fx:id="atendHere" mnemonicParsing="false" onAction="#atendHere" prefHeight="38.0" prefWidth="90.0" text="attend">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="importExcel" mnemonicParsing="false" onAction="#importExcel" prefHeight="38.0" prefWidth="90.0" text="import">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
